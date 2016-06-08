@@ -64,8 +64,14 @@ test('is the frame a spare', function(t) {
 })
 
 test('is the frame a stike', function(t) {
-  var frame = [10, 0]
-  var strike = game.isStrike(frame)
-  t.equals(strike, 0)
+  var frame1 = [10, 0]
+  var frame2 = [7, 2]
+
+  var strike = game.isStrike(frame1)
+  var notStrike = game.isStrike(frame2)
+
+  t.equals(strike, true)
+  t.equals(notStrike, false)
+
   t.end()
 })
