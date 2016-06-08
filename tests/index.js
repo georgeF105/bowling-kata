@@ -64,8 +64,8 @@ test('is the frame a spare', function(t) {
 })
 
 test('is the frame a stike', function(t) {
-  var frame = [0, 0]
+  var frame = [10, 0]
   var strike = game.isStrike(frame)
-  t.equals(score, 0)
+  t.equals(strike, 0)
   t.end()
 })
