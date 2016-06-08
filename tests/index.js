@@ -47,3 +47,25 @@ test('scores a double strike frame', function(t) {
   t.equals(score, 21)
   t.end()
 })
+
+test('is the frame a spare', function(t) {
+  //arange
+  var spareFrame = [3, 7]
+  var notSpareFrame = [3, 6]
+
+  // act
+  var spare = game.isSpare(spareFrame)
+  var notSpare = game.isSpare(notSpareFrame)
+
+  //assert
+  t.equals(spare, true)
+  t.equals(notSpare, false)
+  t.end()
+})
+
+test('is the frame a stike', function(t) {
+  var frame = [0, 0]
+  var strike = game.isStrike(frame)
+  t.equals(score, 0)
+  t.end()
+})
