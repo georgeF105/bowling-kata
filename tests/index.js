@@ -77,12 +77,16 @@ test('is the frame a stike', function(t) {
 })
 
 test('scores a game', function(t) {
-  var gameFrames = []
-  var gameFrames = [[10,0],[7,3],[7,2],[9,1],[10,0],[10,0],[10,0],[2,3],[6,4],[7,3],[3,0]]
+  var gameFrames1 = [[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0],[1,0]]
+  var gameFrames2 = [[10,0],[7,3],[7,2],[9,1],[10,0],[10,0],[10,0],[2,3],[6,4],[7,2]]
 
-  var score = game.scoreGame(gameFrames)
+  var score1 = game.scoreGame(gameFrames1)
+  var score2 = game.scoreGame(gameFrames2)
 
-  t.equals(score, 168)
+  t.equals(score1, 10)
+  t.equals(score2, 164)
 
   t.end()
 })
+
+
