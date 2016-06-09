@@ -4,12 +4,18 @@
   "description": "bowling game",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/index.js | tap-spec"
+    "test": "node tests/index.js | tap-spec",
+    "app": "budo index.js:bundle.js --live"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^13.0.1",
+    "budo": "^8.3.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
+  },
+  "dependencies": {
+    "domready": "^1.0.8"
   }
 }
