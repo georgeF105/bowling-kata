@@ -89,4 +89,22 @@ test('scores a game', function(t) {
   t.end()
 })
 
+test('scores a game', function(t) {
+  var gameFrames1 = [[10,0],[7,3],[7,2],[9,1],[10,0],[10,0],[10,0],[2,3],[6,4],[7,3],[3,0]]
+  var gameFrames2 = [[10,0],[7,3],[7,2],[9,1],[10,0],[10,0],[10,0],[2,3],[6,4],[10,0],[3,2]]
+  var gameFrames3 = [[10,0],[10,0],[10,0],[10,0],[10,0],[10,0],[10,0],[10,0],[10,0],[10,0],[10,0],[10,0]]
+
+
+  var score1 = game.scoreGame(gameFrames1)
+  var score2 = game.scoreGame(gameFrames2)
+  var score3 = game.scoreGame(gameFrames3)
+
+  t.equals(score1, 168)
+  t.equals(score2, 173)
+  t.equals(score3, 300)
+  t.end()
+})
+
+
+
 
