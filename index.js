@@ -1,16 +1,39 @@
 var bowlingGame = require('./game')
+var domready = require('domready')
 
-playGame()
+domready(playGame)
 
 function playGame() {
   // get score
   // var input = prompt("something")
-  var score = [[10,0],[7,3],[7,2],[9,1],[10,0],[10,0],[10,0],[2,3],[6,4],[10,0],[3,2]]
+  var score = [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
   console.log("score is:")
   console.log(score)
+
+  var gameBoard = initialRender(score, '#root')
+  document.getElementsByTagName('body')[0].appendChild(gameBoard)
   // score game
 
   // output score
+}
+
+function initialRender (board, rootSelector) {
+  var root = document.querySelector(rootSelector)
+  var table = document.createElement('table')
+
+  for (var i=0; i<board.length; i++){
+    var row = document.createElement('tr')
+    for (var j=0; j<board[i].length; j++){
+      var cell = document.createElement('td')
+      var fillCell = document.createTextNode(board[i][j])
+      cell.appendChild(fillCell)
+      row.appendChild(cell)
+    }
+    table.appendChild(row)
+  }
+
+  console.log(table)
+  return table
 }
 
 
